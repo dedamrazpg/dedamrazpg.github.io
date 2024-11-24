@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Deda Mraz PG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('2caf3e49421c5d0c0b8132eedfa91077.png'), linear-gradient(170deg, rgb(215, 101, 120), rgb(228, 29, 29));
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            flex: 1 0 60%;
+            text-align: center;
+        }
+
+        header img {
+            padding-left: 20px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            min-height: 100vh;
+        }
+
+        .body {
+            padding: 20px 15% 0 15%;
+            flex: 1 0 100%;
+            background-color: whitesmoke;
+            background-image: url('rb_561.png');
+            /* background-image: url('rb_93052.png'); */
+            background-repeat: repeat-y;
+        }
+
+        footer {
+            background-color: #707070;
+        }
+
+        footer {
+            padding: 15px;
+            color: white
+        }
+
+        footer a {
+            text-decoration: none;
+            color: white;
+        }
+
+        footer a span {
+            padding-right: 5px;
+            display: inline-block;
+        }
+
+        footer div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="cdf3d7d593fdc35913e57edd1d8b182b.png" alt="" style="height: 90px;">
+        <h1> Deda Mraz PG</h1>
+    </header>
+    <div class="body">
+        <h2>Kreiraj pismo od Deda Mraza</h2>
+        <p>
+            <span class="pe-2">Izaberite pol djeteta:</span>
+            <input type="radio" name="gender" value="girl"><span class="pe-2 ps-1">djevojčica<img
+                    src="c9d8947efe20363356afd9623fe90186.png" style="height: 40px;" class="ps-1"></span>
+            <input type="radio" name="gender" value="boy"><span>dječak<img src="56f1712654c42d4cbee85c3908ba8906.png"
+                    style="height: 40px;" class="ps-1" alt=""></span>
+        </p>
+        <p>
+            <span class="pe-2">Izaberite uzrast deteta:</span>
+            <span>
+                <select id="age" class="form-select form-select-sm" style="width: fit-content; display: inline;"
+                    aria-label="Default select example">
+                    <option selected value="null">Uzrasti</option>
+                    <option value="beba">pismo za bebu</option>
+                    <option value="vrtic">pismo za dijete vrtićkog uzrasta</option>
+                    <option value="skola">pismo za dijete nižeg školskog uzrasta</option>
+                    <option value="orasli">pismo za stariju djecu i odrasle</option>
+                </select>
+            </span>
+        </p>
+        <p>
+            <span class="pe-2">Izaberite pismo:</span>
+            <input type="radio" name="writing" value="latin"><span class="ps-1 pe-2">latinica</span>
+            <input type="radio" name="writing" value="cirilic"><span class="ps-1">ćirilica</span>
+        </p>
+        <div id="holder" class="my-5">
+
+            
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="#"><span class="fa fa-facebook"></span>Deda Mraz PG</a>
+            <a href="#"><span class="fa fa-instagram"></span>dedamrazpg</a>
+            <a href="#"><span class="fa fa-phone"></span>067225406</a>
+        </div>
+    </footer>
+
+    <script>
+        const writingElements = document.querySelectorAll('[name=writing]');
+        const genderElements = document.querySelectorAll('[name=gender]');
+        const ageElements = document.querySelectorAll('age');
+        const holder = document.getElementById('holder');
+        writingElements.forEach(element => {
+            element.addEventListener('change', () => {
+                holder.innerHTML = `<div>Dobri moj
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" placeholder="ime" required>
+                <em>,</em>
+            </div>
+            <br>
+            <div>Čuo sam onomad, od mojih pomoćnika vilenjaka, mnoge lepe reči o tebi pa reših da na ovaj komad ’artije
+                napišem par reči kojima ću te pohvaliti i kojima ću te obradovati.</div>
+            <div>Inače, pišem ti sa dalekog Severnog pola, gde sneg veje kao u bajci, a svetlucave pahulje šire radost i
+                čaroliju. I tako, dok napolju veje, ja sedim kraj kamina u kom vatra tiho pucketa i mislim na tebe, tako
+                dobrog i plemenitog.</div>
+            <div>Želim da ti dočaram koliko sam ponosan na tebe. Toliko da mi je već danima neka milina i toplina oko
+                srca. Vilenjaci su mi pričali da si ove godine
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" required placeholder="pohvala br. 1">,
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" placeholder="pohvala br. 2"> i
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" placeholder="pohvala br. 3">
+                <em>.</em> Bravo!
+                Uvek si, kažu vilenjaci, bio pravi primer dobrog ponašanja drugoj deci.
+            </div>
+            <div>Saznao sam i da si poželeo da dobiješ
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" required placeholder="poklon br. 1">,
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" placeholder="poklon br. 2"> i
+                <input type="text" class="form-control" style="width: 140px; display: inline-block;" placeholder="poklon br. 3">
+                <em>.</em> Obećavam,
+                potrudiću se da ispunim ove tvoje želje!
+            </div>
+            <div>Ovde kod nas, na Severnom polu, je uvek radno i veselo. U velikoj radionici u kojoj vilenjaci i
+                patuljci prave poklone, atmosfera je čarobna i puna radosti. Zveket zvončića i praporaca te vesela
+                muzika odzvanjaju dok patuljci i vilenjaci uz pesmu i igru, vredno i složno, obavljaju svoje poslove oko
+                pripreme poklona za dobru decu. Valja nam se potruditi kako bi sve bilo spremno za Veliku noć kada ću
+                poći u svet da deci delim poklone. Svuda oko vas su šarene igračke koje se polako oblikuju i oživljavaju
+                pod veštim ručicama malih vrednih majstora.</div>
+            <div>Miris sveže pečenih kolačića i tople čokolade širi se radionicom, dodajući još više topline ovom
+                veselom mestu. Vilenjaci lepršaju okolo, proveravajući spiskove i organizujući paketiće, dok patuljci
+                udaraju čekićima i boje igračke, svaki posvećen svom zadatku. Iako je posao naporan, ljubav i pažnja
+                koju ulažu u svaki poklon čine ga izuzetno vrednim.</div>
+            <div>U jednom ćošku radionice, patuljak Mićko pažljivo pakuje igračke, ali svaki put kad zaveže mašnu i
+                pospe ga čarobnim šljokicama, glasno kine, a njegov šešir sklizne na nos preko očiju, izazivajući salve
+                smeha svih vilenjaka i patuljaka. To je radostan haos, gde svaki trenutak donosi novu dozu sreće i
+                uzbuđenja, dok se približava najčarobnija noć u godini.</div>
+            <div>Hvala ti što si bio tako dobar dečak ove godine. Molim te, nastavi tako i u budućnosti. Želim ti srećnu
+                Novu godinu i neka ti svaki dan bude ispunjen osmehom i radošću.</div>
+            <div>S ljubavlju,<br><br>Tvoj Deda Mraz</div>`
+            })
+        })
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
